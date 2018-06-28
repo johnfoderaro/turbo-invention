@@ -2,9 +2,10 @@
 
 - React
 - Webpack 4
+- Styled Components
 - Hot module reload
 - Babel
 - eslint
-- Production buid code splitting
+- Production build code splitting
 
 ### MIT
