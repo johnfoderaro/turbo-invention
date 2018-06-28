@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { resolve, rules, plugins } = require('./webpack.common');
 
 module.exports = {
+  resolve,
   mode: 'production',
   entry: {
     vendors: [
@@ -57,5 +58,4 @@ module.exports = {
       },
     },
   },
-  resolve,
 };

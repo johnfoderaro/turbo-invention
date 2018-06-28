@@ -7,7 +7,7 @@
     "dev": "npm run webpack:dev",
     "prod": "npm run webpack:prod",
     "test": "mocha",
-    "webpack:dev": "webpack-serve --config webpack.dev.js",
+    "webpack:dev": "webpack-serve --hot --config webpack.dev.js",
     "webpack:prod": "webpack --config webpack.prod.js"
   },
   "repository": {

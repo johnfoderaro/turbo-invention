@@ -1,11 +1,13 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 // const convert = require('koa-connect');
 // const proxy = require('http-proxy-middleware');
 
 const { resolve, rules, plugins } = require('./webpack.common');
 
 module.exports = {
+  plugins,
+  resolve,
   mode: 'development',
   entry: ['babel-polyfill', './src/index.jsx'],
   output: {
@@ -31,11 +33,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    ...plugins,
-  ],
-  resolve,
 };
 
 // // proxy local Express API requests
