@@ -1,8 +1,8 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     margin: 0;
@@ -11,9 +11,12 @@ injectGlobal`
 `;
 
 const App = () => (
-  <h1>
-    {'Hello World!'}
-  </h1>
+  <>
+    <GlobalStyle/>
+    <h1>
+      {'Hello World!'}
+    </h1>
+  </>
 );
 
 export default hot(module)(App);
