@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const { resolve, plugins } = require('./webpack.common');
+const { resolve, rules, plugins } = require('./webpack.common');
 
 module.exports = {
   resolve,
@@ -20,6 +20,7 @@ module.exports = {
     filename: '[name].[chunkhash:6].min.js',
     publicPath: '/',
   },
+  module: { rules: [ ...rules ] },
   plugins: [
     ...plugins,
     new webpack.HashedModuleIdsPlugin(),
