@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App = () => (
   <>
-    <GlobalStyle/>
+    <GlobalStyle />
     <h1>
       {'Hello World!'}
     </h1>
