@@ -5,7 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack -p --config webpack.prod.js"
+    "build": "webpack -p --config webpack.prod.js",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx)?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/react-runtime"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ]
   },
   "repository": {
     "type": "git",
@@ -25,16 +40,20 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
+    "enzyme-adapter-react-16": "^1.6.0",
     "html-webpack-plugin": "^3.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
+    "react-test-renderer": "^16.5.2",
     "styled-components": "^4.0.2",
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.1",
@@ -42,6 +61,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
+    "react-addons-test-utils": "^15.6.2",
     "webpack-dev-server": "^3.1.9"
   }
 }
