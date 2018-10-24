@@ -5,7 +5,9 @@
 - Styled Components
 - Hot module reload
 - Babel
-- eslint
+- Eslint
+- Jest
+- Enzyme
 - Production build code splitting
 
 ### MIT
