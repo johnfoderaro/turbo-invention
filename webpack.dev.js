@@ -18,4 +18,7 @@ module.exports = {
       ...rules,
     ],
   },
+  devServer: {
+    proxy: {},
+  },
 };

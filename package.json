@@ -1,17 +1,20 @@
 {
   "name": "turbo-invention",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Static Site Scaffold with React",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack -p --config webpack.prod.js",
-    "test": "jest --watch"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
-    "transform": {
-      "^.+\\.(js|jsx)?$": "babel-jest"
-    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.{js,jsx}"
+    ],
     "transformIgnorePatterns": [
       "!node_modules/react-runtime"
     ],
@@ -23,7 +26,12 @@
       "json",
       "jsx"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup/setupEnzyme.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>__tests__/setup/setupEnzyme.js"
+    ],
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$"
   },
   "repository": {
@@ -37,36 +45,39 @@
   },
   "homepage": "https://github.com/johnfoderaro/turbo-invention#readme",
   "dependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-transform-react-jsx": "^7.0.0",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "clean-webpack-plugin": "^0.1.19",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-styled-components": "^1.10.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "enzyme-to-json": "^3.3.5",
     "html-webpack-plugin": "^3.2.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.3.11",
-    "react-test-renderer": "^16.5.2",
-    "styled-components": "^4.0.2",
-    "webpack": "^4.21.0",
-    "webpack-cli": "^3.1.2"
+    "jest-styled-components": "^6.3.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.3",
+    "styled-components": "^4.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "devDependencies": {
-    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
-    "eslint": "^5.7.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "jest": "^23.6.0",
-    "react-addons-test-utils": "^15.6.2",
-    "webpack-dev-server": "^3.1.9"
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.7.1",
+    "webpack-dev-server": "^3.2.1"
   }
 }

@@ -20,7 +20,7 @@ module.exports = {
     filename: '[name].[chunkhash:6].min.js',
     publicPath: '/',
   },
-  module: { rules: [ ...rules ] },
+  module: { rules: [...rules] },
   plugins: [
     ...plugins,
     new webpack.HashedModuleIdsPlugin(),
