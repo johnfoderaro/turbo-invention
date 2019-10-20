@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const { resolve, rules, plugins } = require('./webpack.common');
 
@@ -9,7 +9,6 @@ module.exports = {
   mode: 'production',
   entry: {
     vendors: [
-      '@babel/polyfill',
       'react',
       'react-dom',
     ],
@@ -24,7 +23,7 @@ module.exports = {
   plugins: [
     ...plugins,
     new webpack.HashedModuleIdsPlugin(),
-    new CleanWebpackPlugin(['public']),
+    new CleanWebpackPlugin(),
   ],
   optimization: {
     splitChunks: {

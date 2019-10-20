@@ -14,7 +14,7 @@ const App = () => (
   <>
     <GlobalStyle />
     <h1>
-      {'Hello World!'}
+      Hello World!
     </h1>
   </>
 );

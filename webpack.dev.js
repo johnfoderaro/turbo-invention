@@ -6,7 +6,7 @@ module.exports = {
   plugins,
   resolve,
   mode: 'development',
-  entry: ['@babel/polyfill', './src/index.jsx'],
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].js',

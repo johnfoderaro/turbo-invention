@@ -14,7 +14,6 @@ module.exports = {
         ],
         plugins: [
           '@babel/transform-react-jsx',
-          '@babel/plugin-syntax-object-rest-spread',
           'babel-plugin-styled-components',
         ],
       },

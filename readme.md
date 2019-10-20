@@ -1,4 +1,4 @@
-# Basic React Boiler Plate
+# Basic React App Boiler Plate
 
 - React
 - Webpack 4
@@ -7,7 +7,6 @@
 - Babel
 - Eslint
 - Jest
-- Enzyme
 - Production build code splitting
 
 ### MIT
